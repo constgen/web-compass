@@ -1,0 +1,28 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'Roboto Slab';
+	src: local('Roboto Slab Regular'),
+		 local('Roboto-Slab-Regular'),
+		 url(./fonts/roboto-slab-regular.ttf);
+}
+
+@font-face {
+	font-weight: 100;
+	font-style: normal;
+	font-family: 'Roboto Slab';
+	src: local('Roboto Slab Thin'),
+		 local('Roboto-Slab-Thin'),
+		 url(./fonts/roboto-slab-thin.ttf);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+	 height: 100%;
+	 width: 100%;
+    background: #20292e;
+    position: relative;
+    overflow: hidden;
+}

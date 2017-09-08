@@ -1,0 +1,26 @@
+{
+  "name": "web-compass",
+  "version": "1.0.0",
+  "description": "Compass for browsers",
+  "main": "index.js",
+  "scripts": {
+    "test": "neutrino test",
+    "start": "neutrino start",
+    "build": "neutrino build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constgen/web-compass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/constgen/web-compass/issues"
+  },
+  "homepage": "https://github.com/constgen/web-compass#readme",
+  "devDependencies": {
+    "neutrino": "^6.1.5",
+    "neutrino-preset-svelte": "^3.0.1"
+  }
+}

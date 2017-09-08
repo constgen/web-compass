@@ -1,0 +1,40 @@
+npm<div class="component-compass">
+	<div class="scale" style="{{rotationStyle}}"></div>
+	<div class="info">
+		<div class="direction">{{direction}}</div>
+		<div class="angle">{{angle}}</div>
+	</div>
+</div>
+
+<script>
+	import './compass.css'
+	import compass from '../../services/compass.service.js'
+
+	export default {
+		data() {
+			return {
+				heading: 0,
+				direction: 'X'
+			}
+		},
+		oncreate() {
+			var component = this
+			compass.subscribe(function({ alpha, heading, direction }){
+				component.set({ alpha, heading, direction })
+			})
+		},
+		ondestroy() {
+			
+		},
+		computed: {
+			rotationStyle(alpha) {
+				return 'transform: rotateZ(' + alpha + 'deg)'
+			},
+			angle(heading) {
+				var angle = parseInt(heading, 10)
+				return angle
+			}
+		}
+	}
+
+</script>

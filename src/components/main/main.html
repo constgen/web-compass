@@ -1,0 +1,18 @@
+
+<!-- <:Window on:touchstart="{{preventEvent(event)}}" /> -->
+
+<Compass />
+
+<script>
+	import './main.css'
+	import Compass from '../compass/compass.html'
+
+	export default {
+		components: {Compass},
+		methods: {
+			preventEvent(event){
+				event.preventDefault()
+			}
+		}
+	}
+</script>
