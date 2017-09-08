@@ -1,57 +1,176 @@
 
 .component-compass {
-	width: 260px;
-	height: 260px;
+	font-size: 1px;
+	box-sizing: border-box;
+	width: 260em;
+	height: 260em;
+	padding: 85em;
 	margin: auto;
 	position: absolute;
 	top: 50%;
 	left: 0;
 	right: 0;
-	margin-top: -130px;
+	margin-top: -130em;
+	font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+	color: #fff;
 }
 
+
+/* Scale
+--------------------------------*/
 .component-compass > .scale {
+	position: absolute;
+	left: 0;
+	top: 0;
 	width: inherit;
 	height: inherit;
-	background: url(./images/disc.png) no-repeat center center;
-	background-size: 100% auto;
 	transform-origin: center center;
-	/*transition: transform 500ms ease-out;*/
-}
-
-.component-compass > .info {
-	position: absolute;
-	left: 50%;
-	top: 50%;
 	box-sizing: border-box;
-	width: 124px;
-	height: 124px;
-	margin-top: -62px;
-	margin-left: -62px;
-	padding:  35px 43px;
-	background: url(./images/center.png) no-repeat center center;
-	background-size: 100% auto;
-	text-align: center;
-	color: white;
-	font-size: 24px;
-	line-height: 24px;
-	font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+	border: 6em solid #be4d45;
+	border-radius: 50%;
+	box-shadow: 
+		inset 0 0 3em 2em rgba(0,0,0,0.11), 
+		inset 0 0 0 61em #2a353a;
 }
 
-.component-compass > .info > .direction {
+.component-compass > .scale::before {
+	content: '';
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	top: 50%;
+	left: 50%;
+	margin: -2em 0 0 -2em;
+	border-radius: 50%;
+	box-shadow: 
+		/*-95em 0 0 currentcolor,*/ /*left*/
+		-90em -25em 0 currentcolor,
+		-90em 25em 0 currentcolor,
+		-80em -47em 0 currentcolor,
+		-80em 47em 0 currentcolor,
+		-66em -66em 0 currentcolor,
+		-66em 66em 0 currentcolor,
+		-47em -80em 0 currentcolor,
+		-47em 80em 0 currentcolor,
+		-25em -90em 0 currentcolor,
+		-25em 90em 0 currentcolor,
+		/*0 -95em 0 currentcolor,*/ /*top*/
+		/*0 95em 0 currentcolor,*/ /*bottom*/
+		90em -25em 0 currentcolor,
+		90em 25em 0 currentcolor,
+		80em -47em 0 currentcolor,
+		80em 47em 0 currentcolor,
+		66em -66em 0 currentcolor,
+		66em 66em 0 currentcolor,
+		47em -80em 0 currentcolor,
+		47em 80em 0 currentcolor,
+		25em -90em 0 currentcolor,
+		25em 90em 0 currentcolor;
+		/*95em 0 0 currentcolor*/ /*right*/
+}
+
+.component-compass > .scale::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-left: 12em solid transparent;
+	border-right: 12em solid transparent;
+	border-top: 12em solid;
+	border-top-color: inherit;
+	margin: -2em 0 0 -12em;
+} 
+
+.component-compass > .scale > .directions {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-weight: 100;
+	font-size: 24em;
+	text-transform: uppercase;
+	line-height: 2.25em;
+	text-shadow: 0 -1em 1em #000;
+	text-align: center;
+}
+
+.component-compass > .scale > .directions > .north,
+.component-compass > .scale > .directions > .west,
+.component-compass > .scale > .directions > .east,
+.component-compass > .scale > .directions > .south {
+	position: absolute;
+	width: 100%;
+}
+.component-compass > .scale > .directions > .north {
+	left: 0;
+	top: 0;
+}
+.component-compass > .scale > .directions > .west {
+	left: -50%;
+	top: 50%;
+	transform: rotateZ(-90deg);
+	transform-origin: top center;
+}
+.component-compass > .scale > .directions > .east {
+	right: -50%;
+	top: 50%;
+	transform: rotateZ(90deg);
+	transform-origin: top center;
+}
+.component-compass > .scale > .directions > .south {
+	left: 0;
+	bottom: 0;
+	transform: rotateZ(180deg);
+	transform-origin: center center;
+}
+
+/* Arrow
+-------------------------------*/
+.component-compass > .info {
+	position: relative;
+	z-index: 0;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 8em solid #be4d45;
+	background: #be4d45;
+	border-radius: 50% 0 50% 50%;
+	transform-origin: center center;
+	transform: rotateZ(-45deg);
+}
+
+.component-compass > .info > .info-wrapper {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 15em 0;
+	background: #aa463f;
+	box-shadow: inset 0 0 3em 1.5em rgba(0, 0, 0, 0.14);
+	border-radius: 50%;
+	text-align: center;
+	line-height: 1;
+	transform-origin: center center;
+	transform: rotateZ(45deg);
+}
+
+.component-compass > .info > .info-wrapper > .direction {
+	font-size: 24em;
 	display: block;
 	font-weight: normal;
 }
 
-.component-compass > .info > .angle {
+.component-compass > .info > .info-wrapper > .angle {
 	position: relative;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 20em;
 	font-weight: 100;
 }
 
 
-.component-compass > .info > .angle:after {
+.component-compass > .info > .info-wrapper > .angle:after {
 	content: '°';
 	position: absolute;
 	left: 100%;
