@@ -1,3 +1,7 @@
+import Screen from './screen.js'
+
+let screen = new Screen()
+
 export const DIRECTION = {
 	N: 'N',
 	S: 'S',
@@ -9,11 +13,18 @@ export const DIRECTION = {
 	SW: 'SW'
 }
 
-export default class Orientation{
+export default class DeviceOrientation{
 	constructor({alpha, beta, gamma}){
+		//compensate screen orientation
+		alpha = alpha - screen.orientation.angle
+
 		if (alpha < 0) {
 			alpha = alpha + 360
 		}
+		else if (alpha > 360) {
+			alpha = alpha - 360
+		}
+
 		this.alpha = alpha
 		this.beta = beta
 		this.gamma = gamma

@@ -1,9 +1,8 @@
-import Orientatoin from './orientation'
+import DeviceOrientatoin from './device-orientation.js'
 
-
-function isEventAbsolute(event) {
-	return Boolean(event.absolute) || event.type === 'deviceorientationabsolute'
-}
+// function isEventAbsolute(event) {
+// 	return Boolean(event.absolute) || event.type === 'deviceorientationabsolute'
+// }
 
 function deviceOrientationHandler(callback) {
 	return function handleDeviceOrientation(event){
@@ -11,7 +10,7 @@ function deviceOrientationHandler(callback) {
 		var beta = event.beta || 0
 		var alpha = event.webkitCompassHeading ? (360 - event.webkitCompassHeading) : event.alpha || 0
 
-		callback(new Orientatoin({alpha, beta, gamma}))
+		callback(new DeviceOrientatoin({alpha, beta, gamma}))
 	}
 }
 

@@ -25,6 +25,8 @@
 	width: inherit;
 	height: inherit;
 	transform-origin: center center;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	box-sizing: border-box;
 	border: 6em solid #be4d45;
 	border-radius: 50%;
@@ -36,8 +38,8 @@
 .component-compass > .scale::before {
 	content: '';
 	position: absolute;
-	width: 2em;
-	height: 2em;
+	width: 2.5em;
+	height: 2.5em;
 	top: 50%;
 	left: 50%;
 	margin: -2em 0 0 -2em;
